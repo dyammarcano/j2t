@@ -1,4 +1,4 @@
-module project-name
+module github.com/dyammarcano/j2t
 
 go 1.25.3
 
