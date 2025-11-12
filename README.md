@@ -1,3 +1,5 @@
+[![Test](https://github.com/dyammarcano/j2t/actions/workflows/test.yml/badge.svg)](https://github.com/dyammarcano/j2t/actions/workflows/test.yml)
+
 j2t — JSON → Toon encoder (encode-only)
 
 j2t is a small command-line tool that encodes JSON into the "Toon" format using the `gotoon` library.
@@ -7,15 +9,6 @@ The CLI exposes a single subcommand, `encode`. It reads JSON from a file or from
 Requirements
 ------------
 - Go (a recent stable version). Ensure your `GOPATH/bin` is on `PATH` to run installed binaries.
-
-Build (from source)
--------------------
-From the repository root on Windows (cmd.exe or PowerShell):
-
-```
-REM Build a local binary named j2t in the current directory
-go build -o j2t .
-```
 
 Install
 -------
@@ -36,12 +29,12 @@ Encode a JSON file and print the Toon output to stdout:
 j2t encode input.json
 ```
 
-Encode JSON from stdin (Windows `type` streams a file; PowerShell `Get-Content` also works):
+Encode JSON from stdin:
 
 ```
+cat input.json | j2t encode
+# Windows (cmd.exe) alternative:
 type input.json | j2t encode
-# or (PowerShell)
-Get-Content input.json | j2t encode
 ```
 
 Write encoded output to a file:
@@ -49,7 +42,9 @@ Write encoded output to a file:
 ```
 j2t encode input.json -o output.toon
 
-:: or from stdin
+# or from stdin
+cat input.json | j2t encode -o output.toon
+# Windows (cmd.exe) alternative:
 type input.json | j2t encode -o output.toon
 ```
 
