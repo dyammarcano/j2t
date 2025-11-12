@@ -23,7 +23,7 @@ THE SOFTWARE.
 package cmd
 
 import (
-	"project-name/internal/encode"
+	"github.com/dyammarcano/j2t/internal/encode"
 
 	"github.com/spf13/cobra"
 )
